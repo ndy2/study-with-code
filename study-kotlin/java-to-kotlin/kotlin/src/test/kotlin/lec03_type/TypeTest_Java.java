@@ -4,7 +4,7 @@ import static org.assertj.core.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-public class Type_Java {
+public class TypeTest_Java {
 
 	int getAgeIfHaha_java(Object target) {
 		if (target instanceof Haha_Java) {
