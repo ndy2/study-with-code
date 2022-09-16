@@ -20,7 +20,8 @@ class StringTest {
             DEF
         """.trimIndent()
 
-        assertThat(str).isEqualTo("ABCDEF")
+        assertThat(str).isEqualTo("ABC\nDEF")
+
     }
 
     @Test
