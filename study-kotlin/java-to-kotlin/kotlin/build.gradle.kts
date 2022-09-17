@@ -11,7 +11,6 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
     testImplementation("org.assertj:assertj-core:3.23.1")
     testImplementation("org.junit.jupiter:junit-jupiter-engine:5.9.0")
-    testImplementation("org.jetbrains.kotlin", "kotlin-test-junit5", "1.3.72")
 }
 
 tasks {
@@ -21,7 +20,7 @@ tasks {
     compileTestKotlin {
         kotlinOptions.jvmTarget = "1.8"
     }
-    test{
-        useJUnitPlatform()
+    test {
+        useJUnit()
     }
 }
