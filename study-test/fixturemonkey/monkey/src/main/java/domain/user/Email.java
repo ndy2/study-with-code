@@ -1,4 +1,4 @@
-package domain;
+package domain.user;
 
 import static com.google.common.base.Preconditions.*;
 
@@ -15,10 +15,7 @@ public class Email {
 			+ "@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\\.)"
 			+ "+[a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]");
 
-	private String value;
-
-	public Email() {
-	}
+	private final String value;
 
 	@ConstructorProperties("value")
 	public Email(final String value) {
