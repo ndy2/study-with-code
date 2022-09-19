@@ -1,10 +1,9 @@
 package com.youthcon21.event.haha.user.service;
 
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.youthcon21.event.haha.admin.CouponService;
-import com.youthcon21.event.haha.sender.SenderService;
 import com.youthcon21.event.haha.user.domain.User;
 import com.youthcon21.event.haha.user.peristence.UserRepository;
 import com.youthcon21.event.haha.user.service.dto.UserDetailedResponse;
@@ -18,8 +17,8 @@ public class UserServiceImpl implements UserService {
 
 	private final UserRepository userRepository;
 
-	private final SenderService senderService;
-	private final CouponService couponService;
+	// domain service !!
+	private final ApplicationEventPublisher eventPublisher;
 
 	@Transactional
 	@Override
@@ -30,8 +29,7 @@ public class UserServiceImpl implements UserService {
 		);
 		userRepository.save(user);
 
-		senderService.sendEmail(user.getEmail());
-		couponService.register(user.getEmail());
+		user.registerEvent(eventPublisher);
 	}
 
 	@Transactional(readOnly = true)

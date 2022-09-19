@@ -8,6 +8,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.context.ApplicationEventPublisher;
+
+import com.youthcon21.event.haha.user.event.UserCouponEvent;
+import com.youthcon21.event.haha.user.event.UserSenderEvent;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -28,5 +33,10 @@ public class User {
 	public User(final String email, final String password) {
 		this.email = email;
 		this.password = password;
+	}
+
+	public void registerEvent(final ApplicationEventPublisher eventPublisher) {
+		eventPublisher.publishEvent(new UserCouponEvent(this, this.email));
+		eventPublisher.publishEvent(new UserSenderEvent(this, this.email));
 	}
 }
