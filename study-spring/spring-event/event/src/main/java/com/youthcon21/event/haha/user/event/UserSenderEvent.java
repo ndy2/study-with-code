@@ -1,16 +1,13 @@
 package com.youthcon21.event.haha.user.event;
 
-import org.springframework.context.ApplicationEvent;
-
 import lombok.Getter;
 
 @Getter
-public class UserSenderEvent extends ApplicationEvent {
+public class UserSenderEvent {
 
 	private final String email;
 
-	public UserSenderEvent(final Object source, final String email) {
-		super(source);
+	public UserSenderEvent(final String email) {
 		this.email = email;
 	}
 }

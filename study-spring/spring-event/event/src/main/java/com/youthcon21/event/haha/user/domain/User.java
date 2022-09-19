@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Getter
 @NoArgsConstructor(access = PROTECTED)
-@Table(name ="users")
+@Table(name = "users")
 public class User {
 
 	@Id
@@ -36,7 +36,7 @@ public class User {
 	}
 
 	public void registerEvent(final ApplicationEventPublisher eventPublisher) {
-		eventPublisher.publishEvent(new UserCouponEvent(this, this.email));
-		eventPublisher.publishEvent(new UserSenderEvent(this, this.email));
+		eventPublisher.publishEvent(new UserCouponEvent(this.email));
+		eventPublisher.publishEvent(new UserSenderEvent(this.email));
 	}
 }
