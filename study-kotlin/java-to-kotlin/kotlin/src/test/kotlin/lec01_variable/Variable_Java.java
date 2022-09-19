@@ -6,7 +6,6 @@ public class Variable_Java {
 
 	static class Person{
 		String name;
-
 		public Person(final String name) {
 			this.name = name;
 		}
