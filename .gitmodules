@@ -1,0 +1,3 @@
+[submodule "ecommerce"]
+	path = study-spring-cloud/ecommerce
+	url = https://github.com/ndy2/ecommerce.git
