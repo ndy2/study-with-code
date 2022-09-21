@@ -2,7 +2,9 @@ package hello.core.member.infra.persistence
 
 import hello.core.member.domain.Member
 import hello.core.member.domain.MemberRepository
+import org.springframework.stereotype.Repository
 
+@Repository
 class HashMapMemberRepository : MemberRepository {
 
     companion object {
