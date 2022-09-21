@@ -4,7 +4,7 @@ import hello.core.member.domain.Member
 import hello.core.member.domain.MemberRepository
 
 class MemberServiceImpl(
-    private val memberRepository: MemberRepository
+    val memberRepository: MemberRepository
 ) : MemberService {
 
 

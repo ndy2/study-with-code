@@ -1,8 +1,7 @@
-package hello.core
+package hello.core.ac
 
 import hello.core.member.domain.MemberRepository
 import hello.core.member.infra.persistence.HashMapMemberRepository
-import hello.core.member.service.MemberServiceImpl
 import org.assertj.core.api.Assertions
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test

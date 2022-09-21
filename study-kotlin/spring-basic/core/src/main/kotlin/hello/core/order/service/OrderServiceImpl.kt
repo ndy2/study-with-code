@@ -7,7 +7,7 @@ import hello.core.member.infra.persistence.HashMapMemberRepository
 import hello.core.order.domain.Order
 
 class OrderServiceImpl(
-    private val memberRepository: MemberRepository,
+    val memberRepository: MemberRepository,
     private val discountPolicy : DiscountPolicy,
 ) : OrderService {
 

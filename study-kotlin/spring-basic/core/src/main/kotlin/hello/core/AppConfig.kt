@@ -16,21 +16,25 @@ class AppConfig {
 
     @Bean
     fun memberService(): MemberService {
+        println("memberService")
         return MemberServiceImpl(memberRepository())
     }
 
     @Bean
     fun memberRepository(): MemberRepository {
+        println("memberRepository")
         return HashMapMemberRepository()
     }
 
     @Bean
     fun orderService(): OrderService {
+        println("orderService")
         return OrderServiceImpl(memberRepository(), discountPolicy())
     }
 
     @Bean
     fun discountPolicy(): DiscountPolicy {
+        println("discountPolicy")
         return FixDiscountPolicy()
     }
 }

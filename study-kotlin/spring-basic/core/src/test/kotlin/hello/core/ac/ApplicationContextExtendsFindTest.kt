@@ -1,17 +1,14 @@
-package hello.core
+package hello.core.ac
 
 import hello.core.discount.DiscountPolicy
 import hello.core.discount.FixDiscountPolicy
 import hello.core.discount.RateDiscountPolicy
-import hello.core.member.domain.MemberRepository
-import hello.core.member.infra.persistence.HashMapMemberRepository
 import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.assertThatExceptionOfType
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.NoUniqueBeanDefinitionException
 import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Bean
-import kotlin.reflect.jvm.internal.impl.load.kotlin.JvmType
 
 class ApplicationContextExtendsFindTest {
 

@@ -1,18 +1,13 @@
-package hello.core
+package hello.core.ac
 
-import hello.core.discount.DiscountPolicy
-import hello.core.member.domain.MemberRepository
-import hello.core.member.infra.persistence.HashMapMemberRepository
+import hello.core.AppConfig
 import hello.core.member.service.MemberService
 import hello.core.member.service.MemberServiceImpl
 import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.assertThatExceptionOfType
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.NoSuchBeanDefinitionException
-import org.springframework.beans.factory.NoUniqueBeanDefinitionException
 import org.springframework.context.annotation.AnnotationConfigApplicationContext
-import org.springframework.context.annotation.Bean
-import org.springframework.context.annotation.Configuration
 
 class ApplicationContextBasicFindTest {
 
