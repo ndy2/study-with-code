@@ -6,8 +6,8 @@ import hello.core.order.domain.Order
 
 class OrderServiceImpl : OrderService {
 
-    private val memberRepository = HashMapMemberRepository()
-    private val discountPolicy = FixDiscountPolicy()
+    val memberRepository = HashMapMemberRepository()
+    val discountPolicy = FixDiscountPolicy()
 
     override fun createOrder(memberId: Long, itemName: String, itemPrice: Int): Order {
 
@@ -18,7 +18,7 @@ class OrderServiceImpl : OrderService {
             memberId,
             itemName,
             itemPrice,
-            discountPrice,
+            discountPrice
         )
     }
 }

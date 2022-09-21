@@ -1,10 +1,10 @@
 package hello.core.order.domain
 
 class Order(
-    private val memberId: Long,
-    private val itemName: String,
-    private val itemPrice: Int,
-    private val discountPrice: Int,
+    val memberId: Long,
+    val itemName: String,
+    val itemPrice: Int,
+    val discountPrice: Int,
 ) {
 
     val calculatePrice
