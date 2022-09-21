@@ -13,7 +13,7 @@ class HashMapMemberRepository : MemberRepository {
         store[member.id] = member
     }
 
-    override fun findById(id: Long): Member? {
-        return store[id]
+    override fun findById(id: Long): Member {
+        return store[id] ?: throw RuntimeException("no such member")
     }
 }

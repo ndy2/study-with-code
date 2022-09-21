@@ -13,6 +13,6 @@ class MemberServiceImpl : MemberService {
     }
 
     override fun findMember(id: Long): Member {
-        return memberRepository.findById(id) ?: throw RuntimeException("no such member")
+        return memberRepository.findById(id)
     }
 }
