@@ -1,12 +1,18 @@
 package hello.core
 
+import hello.core.discount.DiscountPolicy
+import hello.core.member.domain.MemberRepository
+import hello.core.member.infra.persistence.HashMapMemberRepository
 import hello.core.member.service.MemberService
 import hello.core.member.service.MemberServiceImpl
 import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.assertThatExceptionOfType
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.NoSuchBeanDefinitionException
+import org.springframework.beans.factory.NoUniqueBeanDefinitionException
 import org.springframework.context.annotation.AnnotationConfigApplicationContext
+import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Configuration
 
 class ApplicationContextBasicFindTest {
 
@@ -31,8 +37,9 @@ class ApplicationContextBasicFindTest {
     }
 
     @Test
-    fun `구체 타임으로 조회`() {
+    fun `구체 타입으로 조회`() {
         val memberService = ac.getBean("memberService", MemberServiceImpl::class.java)
         assertThat(memberService).isInstanceOf(MemberServiceImpl::class.java)
     }
+
 }
