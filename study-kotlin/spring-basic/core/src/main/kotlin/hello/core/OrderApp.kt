@@ -7,8 +7,8 @@ import hello.core.order.service.OrderServiceImpl
 
 fun main() {
 
-    val memberService = MemberServiceImpl()
-    val orderService = OrderServiceImpl()
+    val memberService = AppConfig().memberService()
+    val orderService = AppConfig().orderService()
 
 
     val member1 = Member(1L, "haha", Grade.VIP)

@@ -1,13 +1,16 @@
 package hello.core.order.service
 
+import hello.core.discount.DiscountPolicy
 import hello.core.discount.FixDiscountPolicy
+import hello.core.member.domain.MemberRepository
 import hello.core.member.infra.persistence.HashMapMemberRepository
 import hello.core.order.domain.Order
 
-class OrderServiceImpl : OrderService {
+class OrderServiceImpl(
+    private val memberRepository: MemberRepository,
+    private val discountPolicy : DiscountPolicy,
+) : OrderService {
 
-    val memberRepository = HashMapMemberRepository()
-    val discountPolicy = FixDiscountPolicy()
 
     override fun createOrder(memberId: Long, itemName: String, itemPrice: Int): Order {
 

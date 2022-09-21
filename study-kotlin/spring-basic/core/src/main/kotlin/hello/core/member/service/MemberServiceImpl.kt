@@ -2,11 +2,11 @@ package hello.core.member.service
 
 import hello.core.member.domain.Member
 import hello.core.member.domain.MemberRepository
-import hello.core.member.infra.persistence.HashMapMemberRepository
 
-class MemberServiceImpl : MemberService {
+class MemberServiceImpl(
+    private val memberRepository: MemberRepository
+) : MemberService {
 
-    private val memberRepository: MemberRepository = HashMapMemberRepository()
 
     override fun join(member: Member) {
         memberRepository.save(member)

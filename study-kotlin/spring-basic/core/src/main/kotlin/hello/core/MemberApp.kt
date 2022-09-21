@@ -2,11 +2,10 @@ package hello.core
 
 import hello.core.member.domain.Grade
 import hello.core.member.domain.Member
-import hello.core.member.service.MemberServiceImpl
 
 fun main() {
 
-    val memberService = MemberServiceImpl()
+    val memberService = AppConfig().memberService()
 
     val member1 = Member(1L, "하하", Grade.BASIC)
     val member2 = Member(2L, "파파", Grade.BASIC)

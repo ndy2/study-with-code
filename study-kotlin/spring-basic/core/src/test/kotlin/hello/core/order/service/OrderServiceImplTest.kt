@@ -1,16 +1,15 @@
 package hello.core.order.service
 
+import hello.core.AppConfig
 import hello.core.member.domain.Grade
 import hello.core.member.domain.Member
-import hello.core.member.service.MemberServiceImpl
 import org.assertj.core.api.BDDAssertions.then
 import org.junit.jupiter.api.Test
 
 class OrderServiceImplTest {
 
-    private val memberService = MemberServiceImpl()
-    private val orderService = OrderServiceImpl()
-
+    private val memberService = AppConfig().memberService()
+    private val orderService = AppConfig().orderService()
 
     @Test
     fun `create order`() {
