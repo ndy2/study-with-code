@@ -24,4 +24,4 @@
     - `junit tdd` by java & kotlin @ [xUnit 테스팅 프레임워크를 TDD로 만들어보자
       ](https://www.youtube.com/watch?v=tdKFZcZSJmg) & 켄트백-TDD
     - 정리 test 방법 론
-        - TDD, BDD, PBT, Mutation Testing
+      ${server.port}        - TDD, BDD, PBT, Mutation Testing
