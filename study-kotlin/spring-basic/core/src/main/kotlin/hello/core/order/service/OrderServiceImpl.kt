@@ -5,7 +5,9 @@ import hello.core.discount.FixDiscountPolicy
 import hello.core.member.domain.MemberRepository
 import hello.core.member.infra.persistence.HashMapMemberRepository
 import hello.core.order.domain.Order
+import org.springframework.stereotype.Service
 
+@Service
 class OrderServiceImpl(
     val memberRepository: MemberRepository,
     private val discountPolicy : DiscountPolicy,
