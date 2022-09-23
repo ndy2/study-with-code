@@ -20,8 +20,6 @@ class MemberSaveControllerV3 : ControllerV3 {
         val member = Member(username, age)
         memberRepository.save(member)
 
-        //Model에 데이터를 보관한다
-
         val modelView = ModelView("save-result")
         modelView.model["member"] = member
         return modelView
