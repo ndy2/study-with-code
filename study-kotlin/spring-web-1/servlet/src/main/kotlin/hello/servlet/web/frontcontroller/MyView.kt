@@ -10,4 +10,9 @@ class MyView(
         val dispatcher = req.getRequestDispatcher(viewPath)
         dispatcher.forward(req, resp)
     }
+
+    fun render(paramMap: MutableMap<String, Any>, req: HttpServletRequest, resp: HttpServletResponse) {
+        paramMap.forEach(req::setAttribute)
+        render(req, resp)
+    }
 }

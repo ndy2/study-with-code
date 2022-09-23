@@ -18,8 +18,6 @@ class FrontControllerServletV2 : HttpServlet() {
     )
 
     override fun service(req: HttpServletRequest, resp: HttpServletResponse) {
-        controllerMap[req.requestURI]?.proc(req, resp)
-
         controllerMap[req.requestURI].let { controller ->
             if (controller != null) {
                 val myView = controller.proc(req, resp)
