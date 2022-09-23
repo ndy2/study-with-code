@@ -18,6 +18,8 @@ repositories {
 }
 
 dependencies {
+    implementation("jstl:jstl:1.2")
+    implementation("org.apache.tomcat.embed:tomcat-embed-jasper")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
