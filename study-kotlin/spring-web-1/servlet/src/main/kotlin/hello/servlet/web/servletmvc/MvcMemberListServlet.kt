@@ -19,12 +19,12 @@ class MvcMemberListServlet : HttpServlet() {
 
     override fun service(request: HttpServletRequest, response: HttpServletResponse) {
 
-        val members = memberRepository.findAll();
+        val members = memberRepository.findAll()
 
-        request.setAttribute("members", members);
+        request.setAttribute("members", members)
 
-        val viewPath = "/WEB-INF/views/members.jsp";
-        val dispatcher = request.getRequestDispatcher(viewPath);
-        dispatcher.forward(request, response);
+        val viewPath = "/WEB-INF/views/members.jsp"
+        val dispatcher = request.getRequestDispatcher(viewPath)
+        dispatcher.forward(request, response)
     }
 }

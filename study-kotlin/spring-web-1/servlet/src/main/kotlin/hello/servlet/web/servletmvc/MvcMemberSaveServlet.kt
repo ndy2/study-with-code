@@ -19,17 +19,17 @@ import java.io.IOException;
 
     override fun service(request: HttpServletRequest, response :HttpServletResponse){
 
-        val username = request.getParameter("username");
-        val age = Integer.parseInt(request.getParameter("age"));
+        val username = request.getParameter("username")
+        val age = Integer.parseInt(request.getParameter("age"))
 
-        val member = Member(username, age);
-        memberRepository.save(member);
+        val member = Member(username, age)
+        memberRepository.save(member)
 
-        //Model에 데이터를 보관한다.
-        request.setAttribute("member", member);
+        //Model에 데이터를 보관한다
+        request.setAttribute("member", member)
 
-        val viewPath = "/WEB-INF/views/save-result.jsp";
-        val dispatcher = request.getRequestDispatcher(viewPath);
-        dispatcher.forward(request, response);
+        val viewPath = "/WEB-INF/views/save-result.jsp"
+        val dispatcher = request.getRequestDispatcher(viewPath)
+        dispatcher.forward(request, response)
     }
 }

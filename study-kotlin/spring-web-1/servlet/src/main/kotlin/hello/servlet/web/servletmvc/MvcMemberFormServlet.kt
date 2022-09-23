@@ -13,8 +13,8 @@ class MvcMemberFormServlet : HttpServlet() {
 
     override fun service(request: HttpServletRequest, response :HttpServletResponse){
 
-        val viewPath = "/WEB-INF/views/new-form.jsp";
-        val dispatcher = request.getRequestDispatcher(viewPath);
-        dispatcher.forward(request, response);
+        val viewPath = "/WEB-INF/views/new-form.jsp"
+        val dispatcher = request.getRequestDispatcher(viewPath)
+        dispatcher.forward(request, response)
     }
 }
