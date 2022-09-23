@@ -2,6 +2,7 @@ package support.domain;
 
 import net.jqwik.api.Arbitraries;
 import net.jqwik.api.Arbitrary;
+import net.jqwik.api.Provide;
 
 import domain.user.Email;
 import domain.user.OAuthType;
@@ -11,10 +12,12 @@ import com.navercorp.fixturemonkey.ArbitraryBuilders;
 
 public class BaseDomainTest extends BaseTest {
 
+	@Provide
 	protected Arbitrary<OAuthType> oauthTypeArbitrary() {
 		return fixture.giveMeArbitrary(OAuthType.class);
 	}
 
+	@Provide
 	protected Arbitrary<Email> emailArbitrary() {
 		Arbitrary<String> emailArbitrary = ArbitraryBuilders.zip(
 			arbitraryBuilderString().set(Arbitraries.strings().alpha().numeric().ofMinLength(3).ofMaxLength(10)),
