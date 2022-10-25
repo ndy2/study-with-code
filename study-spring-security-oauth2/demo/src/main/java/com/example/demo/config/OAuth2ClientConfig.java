@@ -18,6 +18,7 @@ public class OAuth2ClientConfig {
 	private ClientRegistration keycloakClientRegistration() {
 		return ClientRegistrations.fromIssuerLocation("http://localhost:8080/auth/realms/oauth2")
 				.registrationId("keycloak")
+				.clientName("oauth2-client-app")
 				.clientId("oauth2-client-app")
 				.clientSecret("be688300-8171-4399-b40e-544ad0cc3ccd")
 				.redirectUri("http://localhost:8081/login/oauth2/code/keycloak")

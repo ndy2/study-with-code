@@ -23,10 +23,10 @@ public class SecurityConfig {
 						.anyRequest().authenticated()
 				)
 //				.formLogin(Customizer.withDefaults())
-//				.oauth2Login(Customizer.withDefaults())
-				.oauth2Login(oauth2 -> oauth2
-						.loginPage("/loginPage")
-				)
+				.oauth2Login(Customizer.withDefaults())
+//				.oauth2Login(oauth2 -> oauth2
+//						.loginPage("/loginPage")
+//				)
 //				.apply(customSecurityConfigurer)
 //				.and()
 				.build();
