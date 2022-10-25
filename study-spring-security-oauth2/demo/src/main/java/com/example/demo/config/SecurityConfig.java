@@ -17,12 +17,18 @@ public class SecurityConfig {
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		return http
+//				.authorizeRequests(Customizer.withDefaults())
 				.authorizeRequests(a -> a
+						.antMatchers("/loginPage").permitAll()
 						.anyRequest().authenticated()
 				)
-				.formLogin(Customizer.withDefaults())
-				.apply(customSecurityConfigurer)
-				.and()
+//				.formLogin(Customizer.withDefaults())
+//				.oauth2Login(Customizer.withDefaults())
+				.oauth2Login(oauth2 -> oauth2
+						.loginPage("/loginPage")
+				)
+//				.apply(customSecurityConfigurer)
+//				.and()
 				.build();
 	}
 }
