@@ -1,5 +1,10 @@
 package com.example.studyswagger.controller;
 
+import javax.validation.Valid;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -22,22 +27,34 @@ public class UserController {
 	@Data
 	static class NewUserRequest {
 
-		@Schema(description = "유저이름")
+		@NotNull
+		@Size(min = 4, max = 20)
+		@Schema(description = "유저이름", example = "haha", required = true)
 		String username;
 
-		@Schema(description = "이메일")
+		@Email
+		@NotNull
+		@Schema(description = "이메일", example = "haha@papa.com", required = true)
 		String email;
 
-		@Schema(description = "비밀번호")
+		@NotNull
+		@Schema(description = "비밀번호", example = "p@ssw0rd", required = true)
 		String password;
 	}
 
 	@Data
 	@AllArgsConstructor
 	static class NewUserResponse {
+		@Schema(description = "유저이름", example = "haha", required = true)
 		String username;
+
+		@Schema(description = "이메일", example = "haha@papa.com", required = true)
 		String email;
+
+		@Schema(description = "자기소개", example = "Hello! I am haha", required = true)
 		String bio;
+
+		@Schema(description = "이미지", example = "haha.png", required = true)
 		String image;
 	}
 
@@ -50,9 +67,10 @@ public class UserController {
 			description = "OK",
 			content = @Content(schema = @Schema(implementation = NewUserResponse.class))
 	))
+	@GeneralApiResponses
 	@PostMapping
 	public NewUserResponse register(
-			@RequestBody NewUserRequest request
+			@Valid @RequestBody NewUserRequest request
 	) {
 		return new NewUserResponse(
 				request.username,
